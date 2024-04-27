@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        @keyframes bg {
+            0% {background-color: #ff0000;}
+            50% {background-color: #00ff00;}
+            100% {background-color: #0000ff;}
+        }
+
+        body {
+            animation: bg 10s infinite;
+        }
+
+        .sphere {
+            width: 5vw; 
+            height: 5vw; 
+            background-color: #4CAF50;
+            margin: 1vw;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-radius: 50%;
+            position: relative;
+            text-align: center;
+            line-height: 5vw; 
+            border-radius: 50%;
+            background: radial-gradient(circle at 30% 30%, #ff0000, #0000ff);
+            box-shadow: 0 0 0.5vw rgba(0,0,0,0.3);
+        }
+
+        .sphere:hover {
+            transform: scale(1.1) rotate(360deg);
+            box-shadow: 0 0 1vw rgba(0,0,0,0.5);
+        }
+
+        #container {
+            position: fixed;
+            right: 50vw; 
+            top: 50%;
+            transform: translateX(50%) translateY(-50%); 
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-direction: row;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="1.1" class="sphere" data-url="https://dragonit1utc.github.io/bot_chat_1_1/">1.1</div>
+        <div id="1.2" class="sphere" data-url="https://dragonit1utc.github.io/bot_chat_1_2/">1.2</div>
+        <div id="1.3" class="sphere" data-url="https://dragonit1utc.github.io/bot_chat_1_3/">1.3</div>
+        <div id="2.1" class="sphere" data-url="https://dragonit1utc.github.io/Bot_chat_2_1/">2.1</div>
+        <div id="2.2" class="sphere" data-url="https://dragonit1utc.github.io/bot_chat_2_2/">2.2</div>
+        <div id="3.1" class="sphere" data-url="https://dragonit1utc.github.io/bot_chat_3_1/">3.1</div>
+        <div id="3.2" class="sphere" data-url="https://dragonit1utc.github.io/bot_chat_3_2/">3.2</div>
+    </div>
+
+    <script>
+        document.querySelectorAll('.sphere').forEach(item => {
+            item.addEventListener('click', event => {
+                window.open(event.target.dataset.url, '_blank');
+            })
+            item.addEventListener('mouseover', event => {
+                event.target.style.backgroundColor = '#' + Math.floor(Math.random()*16777215).toString(16);
+            })
+        })
+    </script>
+</body>
+</html>
